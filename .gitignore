@@ -1,0 +1,50 @@
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/.angular/cache
+
+# Node modules
+/node_modules
+
+# IDEs e editores
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.sublime-project
+.vscode/*
+
+# VS Code exceptions
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Logs
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+lerna-debug.log
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Coverage e testes
+/coverage
+/.nyc_output
+/.sass-cache
+/connect.lock
+/karma-*
+/libpeerconnection.log
+/testem.log
+/typings
+
+# Ambiente
+.env
+.env.test
+.env.production
