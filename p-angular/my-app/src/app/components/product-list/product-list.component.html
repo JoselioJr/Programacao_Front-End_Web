@@ -1,0 +1,33 @@
+<div class="product-list-container">
+  <h3>Lista de Produtos</h3>
+  
+  <div class="search-section">
+    <input 
+      type="text" 
+      [(ngModel)]="nomeProduto" 
+      placeholder="Buscar produto..."
+      [value]="nomeProduto">
+    <button (click)="onLimparFiltro()" [disabled]="!nomeProduto">Limpar</button>
+  </div>
+  
+  <p *ngIf="produtoSelecionado" class="selected-product">
+    Selecionado: {{ produtoSelecionado }}
+  </p>
+  
+  <div class="products-grid">
+    <div *ngFor="let produto of getProdutosFiltrados()" 
+         class="product-card"
+         (click)="onProdutoClick(produto)"
+         [class.selected]="produtoSelecionado.includes(produto.nome)">
+      <h4>{{ produto.nome }}</h4>
+      <p class="price">R$ {{ produto.preco }}</p>
+      <span class="category" [title]="'Categoria: ' + produto.categoria">
+        {{ produto.categoria }}
+      </span>
+    </div>
+  </div>
+  
+  <p *ngIf="getProdutosFiltrados().length === 0" class="no-products">
+    Nenhum produto encontrado para "{{ nomeProduto }}"
+  </p>
+</div>

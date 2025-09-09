@@ -1,0 +1,27 @@
+<aside class="news-sidebar">
+  <h2>Últimas Notícias</h2>
+  
+  <div class="news-filter">
+    <select [(ngModel)]="filtroCategoria" (change)="onCategoriaChange()">
+      <option value="todas">Todas as categorias</option>
+      <option value="galeria">Galeria</option>
+      <option value="funcionalidade">Funcionalidades</option>
+      <option value="concurso">Concursos</option>
+    </select>
+  </div>
+  
+  <ul class="news-list">
+    <li *ngFor="let noticia of getNoticiasVisiveis()">
+      <a [routerLink]="['/noticia', noticia.id]"
+         [class.destaque]="noticia.destaque"
+         [title]="'Categoria: ' + noticia.categoria">
+        {{ noticia.titulo }}
+        <span *ngIf="noticia.destaque" class="badge">★ Destaque</span>
+      </a>
+    </li>
+  </ul>
+  
+  <p *ngIf="getNoticiasVisiveis().length === 0" class="no-news">
+    Nenhuma notícia encontrada para a categoria "{{ filtroCategoria }}"
+  </p>
+</aside>

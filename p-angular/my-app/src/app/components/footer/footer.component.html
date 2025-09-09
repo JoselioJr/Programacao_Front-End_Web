@@ -1,0 +1,32 @@
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-section about">
+      <h4>Sobre o Site</h4>
+      <p>Este site é dedicado a apaixonados por fotografia, oferecendo galerias, concursos e um espaço para compartilhar suas melhores imagens.</p>
+    </div>
+    <div class="footer-section links">
+      <h4>Links Rápidos</h4>
+      <ul>
+        <li><a href="#">Galeria</a></li>
+        <li><a href="#">Favoritas</a></li>
+        <li><a href="#">Concurso</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </div>
+    <div class="footer-section newsletter">
+      <h4>{{ getStatusNewsletter() }}</h4>
+      <div *ngIf="!isSubscribed">
+        <input 
+          type="email" 
+          [(ngModel)]="email" 
+          placeholder="Seu email"
+          [disabled]="isSubscribed">
+        <button (click)="onInscrever()" [disabled]="!email || isSubscribed">Inscrever</button>
+      </div>
+      <p *ngIf="isSubscribed" class="success">✓ Obrigado por se inscrever!</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; {{ anoAtual }} Site de Fotos. Todos os direitos reservados.</span>
+  </div>
+</footer>

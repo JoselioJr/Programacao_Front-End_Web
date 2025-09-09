@@ -1,0 +1,38 @@
+<section *ngIf="noticia" class="noticia-detalhe">
+  <h2>{{ noticia.titulo }}</h2>
+  <span class="news-date">{{ noticia.data }}</span>
+  
+  <div class="news-stats">
+    <span class="likes-count">❤️ {{ noticia.likes }} curtidas</span>
+  </div>
+  
+  <p class="news-content">{{ noticia.conteudo }}</p>
+  
+  <div class="interaction-section">
+    <button 
+      (click)="onLike()" 
+      [disabled]="jaLikado"
+      [class.liked]="jaLikado"
+      [title]="getStatusLike()">
+      {{ jaLikado ? '❤️ Curtido' : '🤍 Curtir' }}
+    </button>
+    
+    <div class="comment-section">
+      <textarea 
+        [(ngModel)]="comentario"
+        placeholder="Deixe seu comentário..."
+        [maxlength]="200"
+        rows="3">
+      </textarea>
+      <button 
+        (click)="onEnviarComentario()" 
+        [disabled]="!comentario.trim()"
+        class="send-comment">
+        Enviar Comentário
+      </button>
+      <small *ngIf="comentario">{{ comentario.length }}/200 caracteres</small>
+    </div>
+  </div>
+</section>
+
+<p *ngIf="!noticia" class="not-found">Notícia não encontrada.</p>

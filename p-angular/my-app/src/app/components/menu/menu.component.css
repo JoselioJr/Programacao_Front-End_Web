@@ -1,0 +1,41 @@
+.photo-menu {
+  background: #263238;
+  padding: 0;
+  margin-top: 72px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.photo-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  margin: 0;
+  padding: 0 24px;
+  align-items: center;
+  height: 56px;
+}
+
+.photo-menu li {
+  display: flex;
+}
+
+.photo-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 8px 0;
+  transition: border-bottom 0.2s, color 0.2s;
+  border-bottom: 2px solid transparent;
+}
+
+.photo-menu a:hover {
+  color: #ffd600;
+  border-bottom: 2px solid #ffd600;
+}
+
+.menu-status {
+  margin: 0;
+  padding: 8px 24px;
+  font-size: 0.9rem;
+}

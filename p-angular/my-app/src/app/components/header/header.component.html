@@ -1,0 +1,17 @@
+<header class="app-header">
+  <div class="logo">{{ titulo }}</div>
+  <div class="search-box">
+    <input 
+      type="text" 
+      [(ngModel)]="pesquisa" 
+      [placeholder]="getSaudacao() + ' Digite sua pesquisa'"
+      (keyup.enter)="onPesquisar()">
+    <button (click)="onPesquisar()" [disabled]="!pesquisa">Buscar</button>
+  </div>
+  <nav class="nav-links" [class.open]="isMenuOpen">
+    <a href="#">Início</a>
+    <a href="#">Sobre</a>
+    <a href="#">Contato</a>
+  </nav>
+  <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+</header>

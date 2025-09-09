@@ -1,0 +1,17 @@
+.main-layout {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 32px;
+  padding: 32px 16px;
+}
+
+.news-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.gallery-content {
+  flex: 1 1 0;
+}

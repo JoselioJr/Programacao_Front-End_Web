@@ -1,0 +1,13 @@
+<nav class="photo-menu">
+  <p class="menu-status" style="color: white;">{{ getStatusMenu() }}</p>
+  <ul>
+    <li *ngFor="let item of menuItems">
+      <a href="#" 
+         (click)="onMenuClick(item.nome)"
+         [class.active]="menuAtivo === item.nome"
+         [title]="'Ir para ' + item.nome">
+        {{ item.icone }} {{ item.nome }}
+      </a>
+    </li>
+  </ul>
+</nav>

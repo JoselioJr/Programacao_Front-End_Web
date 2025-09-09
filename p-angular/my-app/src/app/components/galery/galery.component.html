@@ -1,0 +1,28 @@
+<div class="gallery-container">
+  <div class="gallery-filter">
+    <input 
+      type="text" 
+      [(ngModel)]="filtro" 
+      placeholder="Filtrar por título ou categoria"
+      (input)="imagemSelecionada = ''">
+  </div>
+  
+  <p *ngIf="imagemSelecionada" class="selection-info">{{ imagemSelecionada }}</p>
+  
+  <div class="gallery">
+    <div *ngFor="let img of getImagensVisiveis()" class="image-item">
+      <img 
+        [src]="'https://picsum.photos/id/' + img.id + '/300/200'" 
+        [alt]="img.titulo"
+        [title]="img.titulo + ' - ' + img.categoria"
+        (click)="onImagemClick(img.id)"
+        [class.selected]="imagemSelecionada.includes(img.id.toString())">
+      <p class="image-title">{{ img.titulo }}</p>
+      <span class="image-category">{{ img.categoria }}</span>
+    </div>
+  </div>
+  
+  <p *ngIf="getImagensVisiveis().length === 0" class="no-results">
+    Nenhuma imagem encontrada para "{{ filtro }}"
+  </p>
+</div>
