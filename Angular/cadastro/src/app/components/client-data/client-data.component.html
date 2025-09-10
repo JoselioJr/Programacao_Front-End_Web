@@ -1,0 +1,24 @@
+<form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="nome">Nome da Pessoa:</label>
+    <input type="text" id="nome" formControlName="nome" required>
+  </div>
+
+  <div>
+    <label for="dataNascimento">Data de Nascimento:</label>
+    <input type="date" id="dataNascimento" formControlName="dataNascimento" required>
+  </div>
+
+  <div>
+    <label for="telefone">Telefone:</label>
+    <input type="tel" id="telefone" formControlName="telefone" required>
+  </div>
+
+  <div>
+    <label for="endereco">Endereço:</label>
+    <input type="text" id="endereco" formControlName="endereco" required>
+  </div>
+
+  <button type="submit" [disabled]="!clientForm.valid">Cadastrar</button>
+  <button type="button" (click)="clearForm()">Limpar</button>
+</form>
